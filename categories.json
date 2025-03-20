@@ -1,0 +1,14 @@
+[
+    { "name": "Wall Art", "image": "p2.jpg", "link": "wall-art.html" },
+    { "name": "Lighting", "image": "p4.jpeg", "link": "lightings.html" },
+    { "name": "Pots and Planters", "image": "p5.jpeg", "link": "pots-planters.html" },
+    { "name": "Mirrors", "image": "p6.jpg", "link": "mirrors.html" },
+    { "name": "Clocks", "image": "p7.webp", "link": "clocks.html" },
+    { "name": "Showpieces", "image": "p8.webp", "link": "showpieces.html" },
+    { "name": "Vases", "image": "p9.jpeg", "link": "vases.html" },
+    { "name": "Artificial Plants", "image": "p10.jpg", "link": "artificial-plants.html" },
+    { "name": "Wall Painting", "image": "p11.avif", "link": "wall-painting.html" },
+    { "name": "Table Decor", "image": "p12.webp", "link": "table-decor.html" },
+    { "name": "Candles", "image": "p13.jpeg", "link": "candles.html" },
+    { "name": "Photo Frames", "image": "p14.avif", "link": "photo-frames.html" }
+]

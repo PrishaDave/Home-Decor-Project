@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeless Wooden Artistry</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('plants.png'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "Pots and Planters";
+      position: absolute;
+      font-size: 2.5em;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    /* Filter & Sorting */
+    .filter-sort {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .filter-sort select,
+    .filter-sort button {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 2fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .discount-label, .sold-out-label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #000;
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 0.9em;
+      border-radius: 3px;
+    }
+
+    .discount-label {
+      background-color: #d9534f;
+    }
+
+    .sold-out-label {
+      background-color: #555;
+    }
+
+    /* Product Details */
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .product-info p {
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    .product-price {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero"></div>
+
+  <!-- Filter and Sorting -->
+  <div class="filter-sort">
+    <button>Filter</button>
+    <p>8 Products</p>
+    <select>
+      <option value="low-to-high">Price, low to high</option>
+      <option value="high-to-low">Price, high to low</option>
+      <option value="newest">Newest</option>
+      <option value="popular">Most Popular</option>
+    </select>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="product-grid">
+    <!-- Product Card 1 -->
+    <div class="product-card">
+      <div class="discount-label">-20%</div>
+      <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\plants1.jpg" alt="Pots-set of 3">
+      <div class="product-info">
+        <h3>Pots-set of 3</h3>
+        <p class="product-price">Rs2590</p>
+      </div>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="product-card">
+      <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\light1.jpg" alt="Pendant Lights">
+      <div class="product-info">
+        <h3>Pendant Lights</h3>
+        <p class="product-price">Rs 999</p>
+      </div>
+    </div>
+    <!-- Product Card 3 -->
+    <div class="product-card">
+      <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\light3.jpg" alt="Ashby Table Lamp">
+      <div class="product-info">
+        <h3>Ashby Table Lamp</h3>
+        <p class="product-price">Rs 1500</p>
+      </div>
+    </div>
+    <!-- Product Card 4 -->
+    <div class="product-card">
+      <div class="sold-out-label">Sold Out</div>
+      <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\light4.jpg" alt="Ujal Wall Lamp Gray-Warm Light">
+      <div class="product-info">
+        <h3>Ujal Wall Lamp Gray-Warm Light</h3>
+        <p class="product-price">Rs 2999</p>
+      </div>
+    </div>
+    <!-- Product Card 5 -->
+    <div class="product-card">
+        <div class="discount-label">-50%</div>
+        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\light5.jpg" alt=" Flower lighting">
+        <div class="product-info">
+          <h3>  Flower lighting</h3>
+          <p class="product-price">Rs599</p>
+        </div>
+      </div>
+      <!-- Product Card 6 -->
+      <div class="product-card">
+        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\light6.jpg" alt="Modern Table Lamp">
+        <div class="product-info">
+          <h3>Modern Table Lamp</h3>
+          <p class="product-price">Rs 2590</p>
+        </div>
+      </div>
+      <!-- Product Card 7 -->
+      <div class="product-card">
+        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\light7.jpg" alt="Pink lamp">
+        <div class="product-info">
+          <h3>Pink lamp</h3>
+          <p class="product-price">Rs 799</p>
+        </div>
+      </div>
+      <!-- Product Card 8 -->
+      <div class="product-card">
+        <div class="sold-out-label">Sold Out</div>
+        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\light8.jpg" alt="chubby ducky">
+        <div class="product-info">
+          <h3>chubby ducky</h3>
+          <p class="product-price">Rs 599</p>
+        </div>
+      </div>
+  </div>
+
+</body>
+</html>

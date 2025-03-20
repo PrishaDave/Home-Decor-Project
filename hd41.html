@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Decor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Home image styling */
+        #home {
+            margin: 0;
+            padding: 0;
+        }
+
+        .home-img-container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .home-img-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Category image styling */
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .category-img-container {
+            width: 200px;
+            height: 200px;
+        }
+
+        .category-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container without distortion */
+        }
+
+        .shop-by-categories-heading {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 20px;
+        }
+
+        header .logo {
+            margin-right: 40px; /* Adjust this value to move the nav links more to the left */
+        }
+
+        header .logo img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        nav {
+            flex-grow: 1;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-start; /* Align links more to the left */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-buttons input[type="text"] {
+            padding: 5px;
+            margin-right: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .header-buttons button {
+            background: none;
+            border: none;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        #navicon {
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Photos/logo.png" alt="The Casa Decor">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons" id="headericons">
+            <input type="text" placeholder="Search...">
+            <i id='navicon' class="fa-solid fa-cart-shopping"></i>
+            <i id='navicon' class="fa-regular fa-heart"></i>
+            <i id='navicon' class="fa-regular fa-user"></i>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <div class="home-img-container">
+                <img src="Photos/The Wellhall (1).png" alt="Casa decor">
+            </div>
+            <h2 class="shop-by-categories-heading">Shop by Categories</h2>
+            <div class="categories">
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p2.jpg" alt="Wall Art">
+                    </div>
+                    <h3>Wall Art</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p4.jpeg" alt="Lighting">
+                    </div>
+                    <h3>Lighting</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p5.jpeg" alt="Pots and Planters">
+                    </div>
+                    <h3>Pots and Planters</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p6.jpg" alt="Mirrors">
+                    </div>
+                    <h3>Mirrors</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p7.webp" alt="Clocks">
+                    </div>
+                    <h3>Clocks</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p8.webp" alt="Showpieces">
+                    </div>
+                    <h3>Showpieces</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p9.jpeg" alt="Vases">
+                    </div>
+                    <h3>Vases</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p10.jpg" alt="Artificial Plants">
+                    </div>
+                    <h3>Artificial Plants</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p11.avif" alt="Wall Painting">
+                    </div>
+                    <h3>Wall Painting</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p12.webp" alt="Table Decor">
+                    </div>
+                    <h3>Table Decor</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p13.jpeg" alt="Candles">
+                    </div>
+                    <h3>Candles</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p14.avif" alt="Photo Frames">
+                    </div>
+                    <h3>Photo Frames</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Casa Decor. All rights reserved.</p>
+    </footer>
+</body>
+</html>

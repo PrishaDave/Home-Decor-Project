@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group .inline-inputs {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group .inline-inputs input {
+            width: 48%;
+        }
+        .form-group input[type="radio"] {
+            margin-right: 10px;
+        }
+        .payment-methods {
+            margin-bottom: 20px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Payment Methods</h2>
+    <form action="process_payment.php" method="POST">
+        <div class="form-group payment-methods">
+            <label>Payment Methods</label>
+            <div>
+                <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                <label for="credit-card">Debit or Credit Card</label>
+            </div>
+            <div>
+                <input type="radio" id="paypal" name="payment-method" value="paypal">
+                <label for="paypal">PayPal</label>
+            </div>
+            <div>
+                <input type="radio" id="cod" name="payment-method" value="cod">
+                <label for="cod">Cash on Delivery</label>
+            </div>
+        </div>
+
+        <div id="credit-card-fields">
+            <div class="form-group inline-inputs">
+                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+            </div>
+            <div class="form-group inline-inputs">
+                <input type="password" id="card-number" name="card-number" placeholder="Credit Card Number" required>
+                <input type="text" id="cvc" name="cvc" placeholder="CVC" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="expiration" name="expiration" placeholder="MM / YY" required>
+            </div>
+        </div>
+
+        <div id="paypal-message" style="display: none;">
+            <p>PayPal selected. You will be redirected to PayPal after clicking "Submit Order".</p>
+        </div>
+
+        <div id="cod-message" style="display: none;">
+            <p>Cash on Delivery selected. Please ensure you have the total amount ready upon delivery.</p>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn-submit">Submit Order</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // JavaScript to toggle between payment methods
+    const creditCardRadio = document.getElementById('credit-card');
+    const paypalRadio = document.getElementById('paypal');
+    const codRadio = document.getElementById('cod');
+    const creditCardFields = document.getElementById('credit-card-fields');
+    const paypalMessage = document.getElementById('paypal-message');
+    const codMessage = document.getElementById('cod-message');
+
+    creditCardRadio.addEventListener('change', function() {
+        creditCardFields.style.display = 'block';
+        paypalMessage.style.display = 'none';
+        codMessage.style.display = 'none';
+    });
+
+    paypalRadio.addEventListener('change', function() {
+        creditCardFields.style.display = 'none';
+        paypalMessage.style.display = 'block';
+        codMessage.style.display = 'none';
+    });
+
+    codRadio.addEventListener('change', function() {
+        creditCardFields.style.display = 'none';
+        paypalMessage.style.display = 'none';
+        codMessage.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>

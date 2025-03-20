@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Decor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Your existing CSS styles */
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery for AJAX -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Photos/logo.png" alt="The Casa Decor">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons" id="headericons">
+            <input type="text" id="search-input" placeholder="Search..." onkeyup="fetchSuggestions()">
+            <div id="suggestions"></div>
+            <a href="cart.html"><img src="shopping-cart-icon.png" alt="Shopping Cart"></a>
+            <img src="wishlist-icon.png" alt="Wishlist">
+            <a href="login.html"><img src="user-login-icon.png" alt="User login"></a>
+        </div>
+    </header>
+
+    <script>
+        // Sample data array for categories/items
+        const items = ["Wall Art", "Lighting", "Pots and Planters", "Mirrors", "Clocks", "Showpieces", "Vases", "Artificial Plants", "Wall Painting", "Table Decor", "Candles", "Photo Frames"];
+
+        function fetchSuggestions() {
+            const input = document.getElementById("search-input").value.trim().toLowerCase();
+            const suggestionsBox = document.getElementById("suggestions");
+
+            // Clear previous suggestions
+            suggestionsBox.innerHTML = "";
+
+            if (input) {
+                // Filter items based on the input
+                const filteredItems = items.filter(item => item.toLowerCase().startsWith(input));
+
+                // Show filtered items as suggestions
+                filteredItems.forEach(item => {
+                    const suggestion = document.createElement("div");
+                    suggestion.textContent = item;
+                    suggestion.classList.add("suggestion-item");
+                    suggestion.onclick = function() {
+                        document.getElementById("search-input").value = item;
+                        suggestionsBox.innerHTML = ""; // Clear suggestions on selection
+                    };
+                    suggestionsBox.appendChild(suggestion);
+                });
+            }
+        }
+    </script>
+
+    <style>
+        /* Additional styling for the suggestions box */
+        #suggestions {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            width: 200px;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</body>
+</html>

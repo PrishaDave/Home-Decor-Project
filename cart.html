@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3ebc8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cart-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f7f7f7;
+        }
+
+        td img {
+            width: 100px;
+            border-radius: 4px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-controls input {
+            width: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 10px;
+        }
+
+        .quantity-controls button {
+            background-color: #5a8d41;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .quantity-controls button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .place-order-btn {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .place-order-btn:hover {
+            background-color: #45a049;
+        }
+
+        .heart {
+            color: red;
+            cursor: pointer;
+        }
+
+        .heart:hover {
+            color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\s1.jpg" alt="White Sofa">
+                        White Sofa <br>
+                    </td>
+                    <td>
+                        <div class="quantity-controls">
+                            <button>-</button>
+                            <input type="number" value="1" min="1">
+                            <button>+</button>
+                        </div>
+                    </td>
+                    <td>Rs 41000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="file:///C:/Users/HP/OneDrive/Documents/COLLEGE%20STUDY/WEB%20TEC/s2.webp" alt="White aesthetic wall art">
+                        White aesthetic wall art<br>
+                    </td>
+                    <td>
+                        <div class="quantity-controls">
+                            <button>-</button>
+                            <input type="number" value="1" min="1">
+                            <button>+</button>
+                        </div>
+                    </td>
+                    <td>Rs 15000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="file:///C:/Users/HP/OneDrive/Documents/COLLEGE%20STUDY/WEB%20TEC/s3.webp" alt="Gold & Marble Tree Decor Showpiece">
+                         Gold & Marble Tree Decor Showpiece<br>
+                    </td>
+                    <td>
+                        <div class="quantity-controls">
+                            <button>-</button>
+                            <input type="number" value="1" min="1">
+                            <button>+</button>
+                        </div>
+                    </td>
+                    <td>Rs 3000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-total">
+            Total: Rs 59000
+        </div>
+
+        <!-- Place Order Button (Link to another page) -->
+        <a href="shipping address.html" class="place-order-btn">Place Order</a>
+    </div>
+</body>
+
+</html>

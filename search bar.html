@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Decor Search</title>
+    <style>
+        /* Basic styling for the search bar and suggestions box */
+        .header-buttons {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .header-buttons input[type="text"] {
+            padding: 8px;
+            margin-right: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        .suggestions-box {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            max-height: 200px;
+            width: 100%;
+            z-index: 1000;
+            display: none;
+            overflow-y: auto;
+        }
+        .suggestions-box div {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .suggestions-box div:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-buttons" id="headericons">
+            <input type="text" id="search-input" placeholder="Search...">
+            <div id="suggestions" class="suggestions-box"></div>
+        </div>
+    </header>
+
+    <script>
+        // Functionality for AJAX-based search suggestions
+        document.getElementById("search-input").addEventListener("input", function() {
+            let query = this.value.trim();
+
+            if (query.length < 2) {
+                document.getElementById("suggestions").style.display = "none";
+                return;
+            }
+
+            // AJAX request to get search results
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", `/search?query=${encodeURIComponent(query)}`, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let results = JSON.parse(xhr.responseText);
+                    displayResults(results);
+                }
+            };
+            xhr.send();
+        });
+
+        // Displaying the results in the suggestions box
+        function displayResults(results) {
+            const suggestionsBox = document.getElementById("suggestions");
+            suggestionsBox.innerHTML = "";
+
+            if (results.length === 0) {
+                suggestionsBox.style.display = "none";
+                return;
+            }
+
+            results.forEach(item => {
+                let resultItem = document.createElement("div");
+                resultItem.textContent = item;
+                resultItem.addEventListener("click", function() {
+                    document.getElementById("search-input").value = item;
+                    suggestionsBox.style.display = "none";
+                });
+                suggestionsBox.appendChild(resultItem);
+            });
+
+            suggestionsBox.style.display = "block";
+        }
+
+        // Close the suggestions box when clicking outside the search box
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest("#headericons")) {
+                document.getElementById("suggestions").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

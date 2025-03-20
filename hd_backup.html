@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Decor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Home image styling */
+        #home {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .home-img-container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .home-img-container img {
+            display: block;
+            width: 1438px;
+            height: 625px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .learn-more-button {
+            position: absolute;
+            bottom: 45px;
+            left: 49%;
+            transform: translateX(-50%);
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .learn-more-button:hover {
+            background-color: #ffffff;
+        }
+        
+        .home2 {
+            position: relative;
+            padding: 0px;
+            width: 500px;
+            height: auto;
+            margin: 0;
+        }
+        .home2 img {
+            display: block;
+            width: 1438px;
+            height: 601px;
+            margin: 0;
+            padding: 0;
+        }
+        .shop-now-button {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            align-items: center;
+            transform: translateX(-50%);
+            background-color: #645041;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            align-items: center;
+        }
+
+        .shop-now-button:hover {
+            background-color: #ffffff;
+        }
+
+        /* Category image styling */
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .category-img-container {
+            width: 200px;
+            height: 200px;
+        }
+
+        .category-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container without distortion */
+        }
+
+        .shop-by-categories-heading {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 20px;
+        }
+
+        header .logo {
+            margin-right: 40px; /* Adjust this value to move the nav links more to the left */
+        }
+
+        header .logo img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        nav {
+            flex-grow: 1;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-start; /* Align links more to the left */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-buttons input[type="text"] {
+            padding: 5px;
+            margin-right: 12px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+        }
+
+        .header-buttons img {
+            width: 28px; /* Set the desired width */
+            height: 24px; /* Set the desired height */
+            cursor: pointer;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .frame {
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            margin: 0 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .frame .image {
+            height: 70%;
+            width: 100%;
+            background-color: #eaeaea;
+            overflow: hidden;
+        }
+
+        .frame .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .frame .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        .frame .caption h1 {
+            margin: 5px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .frame .caption h2 {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .shop-btn:hover {
+            background-color: #444;
+        }
+
+        footer {
+            background-color: #645041; /* Adjust color as needed */
+            color: #ffffff; /* Adjust text color */
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Ensure the footer is not fixed */
+            bottom: 0; /* Ensure the footer stays at the bottom of its container */
+            width: 100%; /* Ensure the footer takes full width */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Photos/logo.png" alt="The Casa Decor">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="file:///C:/Users/HP/OneDrive/Documents/COLLEGE%20STUDY/WEB%20TEC/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons" id="headericons">
+            <input type="text" placeholder="Search...">
+            <a href="file:///C:/Users/HP/OneDrive/Documents/COLLEGE%20STUDY/WEB%20TEC/cart.html">
+                <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\pngtree-vector-shopping-cart-icon-png-image_850694-removebg-preview.png" alt="Shopping Cart"> 
+            </a>
+            <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\401-4010030_white-heart-icon-transparent-hd-png-download-removebg-preview.png" alt="Wishlist"> 
+            <a href="login.html">
+                <img src="C:\Users\HP\Downloads\user-sign-white-icon-vector-15479703-removebg-preview.png" alt="User login"> 
+            </a>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <div class="home-img-container">
+                <img src="C:\Users\HP\Downloads\The Wellhall (1).png" alt="Casa decor">
+                <a href="#about" class="learn-more-button">Learn More</a>
+            </div>
+            <h2 class="shop-by-categories-heading">Shop by Categories</h2>
+            <div class="categories">
+                <div class="category">
+                    <div class="category-img-container" onclick="window.location.href='wall-art.html'">
+                        <a href="file:///C:/Users/HP/OneDrive/Documents/COLLEGE%20STUDY/WEB%20TEC/wall%20art%20layout.html">
+                        <img src="p2.jpg" alt="Wall Art">
+                    </a>
+                    </div>
+                    <h3>Wall Art</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container" onclick="window.location.href='wall-art.html'">
+                        <a href="file:///C:/Users/HP/OneDrive/Documents/COLLEGE%20STUDY/WEB%20TEC/lightings.html">
+                        <img src="p4.jpeg" alt="Lighting">
+                    </a>
+                    </div>
+                    <h3>Lighting</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p5.jpeg" alt="Pots and Planters">
+                    </div>
+                    <h3>Pots and Planters</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p6.jpg" alt="Mirrors">
+                    </div>
+                    <h3>Mirrors</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p7.webp" alt="Clocks">
+                    </div>
+                    <h3>Clocks</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p8.webp" alt="Showpieces">
+                    </div>
+                    <h3>Showpieces</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p9.jpeg" alt="Vases">
+                    </div>
+                    <h3>Vases</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p10.jpg" alt="Artificial Plants">
+                    </div>
+                    <h3>Artificial Plants</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p11.avif" alt="Wall Painting">
+                    </div>
+                    <h3>Wall Painting</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p12.webp" alt="Table Decor">
+                    </div>
+                    <h3>Table Decor</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p13.jpeg" alt="Candles">
+                    </div>
+                    <h3>Candles</h3>
+                </div>
+                <div class="category">
+                    <div class="category-img-container">
+                        <img src="p14.avif" alt="Photo Frames">
+                    </div>
+                    <h3>Photo Frames</h3>
+                </div>
+
+            </div>
+            <div class="home2">
+                <img src="C:\Users\HP\Downloads\Home1.png" alt="home2">
+                <a href="#about" class="shop-now-button">Shop Now</a>
+            </div>
+            <div class="container">
+                <div class="frame">
+                    <div class="image">
+                        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\w1.jpg" alt="Table Tops">
+                    </div>
+                    <div class="caption">
+                        <h2>Adorn your Home with our lavish</h2>
+                        <h1>Table Tops!</h1>
+                        <a href="#" class="shop-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="frame">
+                    <div class="image">
+                        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\w3.jpg" alt="Vases">
+                    </div>
+                    <div class="caption">
+                        <h2>Simple yet stunning </h2>
+                        <h1>Vases!</h1>
+                        <a href="#" class="shop-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="frame">
+                    <div class="image">
+                        <img src="C:\Users\HP\OneDrive\Documents\COLLEGE STUDY\WEB TEC\w2.jpg" alt="Unique Frames">
+                    </div>
+                    <div class="caption">
+                        <h2>Frame your style with our </h2>
+                        <h1>Unique Frames!</h1>
+                        <a href="#" class="shop-btn">Shop Now</a>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <p
+        
